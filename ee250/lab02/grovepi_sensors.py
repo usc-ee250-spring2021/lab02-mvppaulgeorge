@@ -30,9 +30,22 @@ be true"""
 if __name__ == '__main__':
     PORT = 4    # D4
 
+    potentiometer = 2
+    i = 0
+    ultrasonic_ranger = 4
     while True:
         #So we do not poll the sensors too quickly which may introduce noise,
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
+	distant=ultrasonicRead(ultrasonic_ranger)
+	print distant, "cm"
+
+	i=grovepi.analogRead(potentiometer)
+	print i, "cm"
+
+	setRGB(0,128,64)
+	setRGB(0,255,0)
+
+	setText(i+"cm"+distant+"cm")
 
         print(grovepi.ultrasonicRead(PORT))
