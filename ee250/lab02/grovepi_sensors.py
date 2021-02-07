@@ -51,9 +51,9 @@ if __name__ == '__main__':
 	    setRGB(0,128,64)
 	    setRGB(0,255,0)
 	    if distant<i:
-	        setText_norefresh(rotary+"cm"+"OBJ PRES\n"+ultra+"cm")
+	        setText_norefresh(" "+rotary+"cm"+" OBJ PRES \n"+" "+ultra+"cm")
 	    elif i<distant:
-		setText_norefresh(rotary+"cm"+"           \n"+ultra+"cm")
+		setText_norefresh(" "+rotary+"cm"+"          \n"+" "+ultra+"cm")
 
             print(grovepi.ultrasonicRead(PORT))
 	except (IOError,TypeError) as e:
